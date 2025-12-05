@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my_app_container
+    ports:
+      - "9090:8080"
+    volumes:
+      - app_data:/app/data        # Persist /data
+      - app_cron:/app/cron        # Persist /cron logs
+    environment:
+      - TZ=UTC
+    restart: unless-stopped
+
+volumes:
+  app_data:
+  app_cron:
