@@ -40,7 +40,6 @@ COPY entrypoint.sh /app/entrypoint.sh
 COPY student_private.pem /app/student_private.pem
 COPY student_public.pem /app/student_public.pem
 COPY instructor_public.pem /app/instructor_public.pem
-COPY encrypted_seed.txt /app/encrypted_seed.txt
 COPY sign_commit.py /app/sign_commit.py
 
 
