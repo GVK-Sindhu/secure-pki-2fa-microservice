@@ -2,8 +2,16 @@ services:
   app:
     build: .
     container_name: local_2fa_app
-    volumes:
-      - ./encrypted_seed.txt:/app/encrypted_seed.txt:ro
     ports:
-      - "8000:8000"
+      - "8080:8080"
+    volumes:
+      - seed-data:/data
+      - cron-output:/cron
+      - ./encrypted_seed.txt:/app/encrypted_seed.txt:ro
     restart: on-failure
+    environment:
+      - TZ=UTC
+
+volumes:
+  seed-data:
+  cron-output:
