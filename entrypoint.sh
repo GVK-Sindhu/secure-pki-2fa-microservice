@@ -18,4 +18,4 @@ fi
 service cron start 2>/dev/null || true
 
 echo "[entrypoint] starting uvicorn..."
-exec uvicorn api:app --host 0.0.0.0 --port 8000
+exec uvicorn src.api:app --host 0.0.0.0 --port 8080
