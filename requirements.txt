@@ -1,4 +1,4 @@
-pyotp
-flask
+fastapi
+uvicorn
 cryptography
-
+pyotp
